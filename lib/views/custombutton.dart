@@ -29,6 +29,7 @@ class custombutton extends StatelessWidget {
         ),
       ),
       onPressed: () {
+        action();
       },
       child: customText( label, label: label,),
     );
