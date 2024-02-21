@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:myapp_flutter/configs/constants.dart';
 import 'package:myapp_flutter/pages/login.dart';
 import 'package:myapp_flutter/views/customcontroller.dart';
@@ -110,24 +111,30 @@ class RegistrationPage extends StatelessWidget {
                 ),
 
                 //Button to navigate to the login page
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: primaryColor,
-                    foregroundColor: appWhiteColor,
-                    disabledForegroundColor: appWhiteColor,
-                    elevation: 5.0,
-                    shadowColor: appWhiteColor,
-                    padding: EdgeInsets.all(20.0),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                  ),
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Login()));
-                  },
-                  child: Text('Register for an account'),
+                MaterialButton(onPressed: () => Get.toNamed("/login"),
+                  child: Text('Register'),
+                  color: primaryColor,
+                  textColor: appWhiteColor,
+                  elevation: 5.0,
                 ),
+                // ElevatedButton(
+                //   style: ElevatedButton.styleFrom(
+                //     backgroundColor: primaryColor,
+                //     foregroundColor: appWhiteColor,
+                //     disabledForegroundColor: appWhiteColor,
+                //     elevation: 5.0,
+                //     shadowColor: appWhiteColor,
+                //     padding: EdgeInsets.all(20.0),
+                //     shape: RoundedRectangleBorder(
+                //       borderRadius: BorderRadius.circular(10.0),
+                //     ),
+                //   ),
+                //   onPressed: () {
+                //     Navigator.push(context,
+                //         MaterialPageRoute(builder: (context) => Login()));
+                //   },
+                //   child: Text('Register for an account'),
+                // ),
               ],
             ),
           ),
