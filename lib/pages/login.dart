@@ -91,7 +91,7 @@ class Login extends StatelessWidget {
                   height: 10.0,
                 ),
 
-                custombutton(label: 'Login', action: () => Get.toNamed("/login"),),
+                custombutton(label: 'Login', action: navigatetoHome),
                 
                  SizedBox(
                   height: 10.0,
@@ -112,5 +112,8 @@ class Login extends StatelessWidget {
         ),
       ),
     );
+  }
+  void navigatetoHome() {
+    Get.toNamed("/home");
   }
 }
