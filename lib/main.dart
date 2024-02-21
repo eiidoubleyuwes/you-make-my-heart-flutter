@@ -5,7 +5,7 @@ import 'package:myapp_flutter/pages/login.dart';
 
 void main() {
   runApp(GetMaterialApp(
-    home: Login(),
+    initialRoute: "/", // Change the initial route to /home
     debugShowCheckedModeBanner: false,
   ));
 }
