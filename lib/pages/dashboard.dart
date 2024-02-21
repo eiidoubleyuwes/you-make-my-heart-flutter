@@ -1,3 +1,4 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:myapp_flutter/configs/constants.dart';
 import 'package:myapp_flutter/views/newscards.dart';
@@ -54,24 +55,14 @@ class Dashboard extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Search',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
-            //Move to the setings page
-            
-          ),
-        ],
-        selectedItemColor: primaryColor,
+      bottomNavigationBar: CurvedNavigationBar(
+      backgroundColor: primaryColor,
+       items: [
+          Icon(Icons.home),
+          Icon(Icons.calendar_month),
+          Icon(Icons.settings),
+       ],
+       onTap: (index) => {},
       ),
     );
   }
