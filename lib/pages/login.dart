@@ -91,46 +91,21 @@ class Login extends StatelessWidget {
                   height: 10.0,
                 ),
 
-                //custombutton(label: 'Button',),
-                //Creating a custom button to text routing
-                MaterialButton(onPressed: () => Get.toNamed("/home"), //The route is called using an anonymous function
-                child: Text('Login'),
-                color: primaryColor,
-                textColor: appWhiteColor,
-                elevation: 5.0,),
+                custombutton(label: 'Login', action: () => Get.toNamed("/login"),),
+                
                  SizedBox(
                   height: 10.0,
                 ),
 
                 //Button to navigate to the registration page
-                MaterialButton(
-                  onPressed: () => Get.toNamed(
-                      "/registration"), //The route is called using an anonymous function
-                  child: Text('Register'),
-                  color: primaryColor,
-                  textColor: appWhiteColor,
-                  elevation: 5.0,
+                custombutton(
+                  label: 'Register',
+                  action: () => Get.toNamed("/registration"),
                 ),
                 SizedBox(
                   height: 10.0,
                 ),
-                // ElevatedButton(
-                //   style: ElevatedButton.styleFrom(
-                //     backgroundColor: primaryColor,
-                //     foregroundColor: appWhiteColor,
-                //     disabledForegroundColor: appWhiteColor,
-                //     elevation: 5.0,
-                //     shadowColor: appWhiteColor,
-                //     padding: EdgeInsets.all(20.0),
-                //     shape: RoundedRectangleBorder(
-                //       borderRadius: BorderRadius.circular(10.0),
-                //     ),
-                //   ),
-                //   onPressed: () {
-                //     Navigator.push(context, MaterialPageRoute(builder: (context) => RegistrationPage()));
-                //   },
-                //   child: Text('Register for an account'),
-                // ),
+                
               ],
             ),
           ),
