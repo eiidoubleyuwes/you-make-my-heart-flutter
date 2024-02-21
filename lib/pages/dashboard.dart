@@ -4,7 +4,15 @@ import 'package:get/get.dart';
 import 'package:myapp_flutter/configs/constants.dart';
 import 'package:myapp_flutter/controllers/homecontroller.dart';
 import 'package:myapp_flutter/views/newscards.dart';
+
 HomeController homeController = Get.put(HomeController());
+
+var pages = [
+  Text("Home"),
+  Text("Track Events"),
+  Text("Settings"),
+];
+
 class Dashboard extends StatelessWidget {
   final List<NewsCard> news = [
     NewsCard(
@@ -28,7 +36,7 @@ class Dashboard extends StatelessWidget {
       imageUrl: "assets/images/red-bull.png",
     ),
   ];
- 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,9 +50,10 @@ class Dashboard extends StatelessWidget {
             fontSize: 34.0,
             fontWeight: FontWeight.bold,
           )),
-      body: Column(
+      body:  Column( 
         children: [
           SizedBox(height: 20.0),
+         Obx(() => pages[homeController.selectedPage.value]) ,
           // F1 News Section
           Expanded(
             child: ListView.builder(
@@ -65,7 +74,7 @@ class Dashboard extends StatelessWidget {
           Icon(Icons.settings),
         ],
         onTap: (index) {
-         
+          homeController.updateSelectedPage(index);
         },
       ),
     );
