@@ -103,23 +103,34 @@ class Login extends StatelessWidget {
                 ),
 
                 //Button to navigate to the registration page
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: primaryColor,
-                    foregroundColor: appWhiteColor,
-                    disabledForegroundColor: appWhiteColor,
-                    elevation: 5.0,
-                    shadowColor: appWhiteColor,
-                    padding: EdgeInsets.all(20.0),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                  ),
-                  onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => RegistrationPage()));
-                  },
-                  child: Text('Register for an account'),
+                MaterialButton(
+                  onPressed: () => Get.toNamed(
+                      "/registration"), //The route is called using an anonymous function
+                  child: Text('Register'),
+                  color: primaryColor,
+                  textColor: appWhiteColor,
+                  elevation: 5.0,
                 ),
+                SizedBox(
+                  height: 10.0,
+                ),
+                // ElevatedButton(
+                //   style: ElevatedButton.styleFrom(
+                //     backgroundColor: primaryColor,
+                //     foregroundColor: appWhiteColor,
+                //     disabledForegroundColor: appWhiteColor,
+                //     elevation: 5.0,
+                //     shadowColor: appWhiteColor,
+                //     padding: EdgeInsets.all(20.0),
+                //     shape: RoundedRectangleBorder(
+                //       borderRadius: BorderRadius.circular(10.0),
+                //     ),
+                //   ),
+                //   onPressed: () {
+                //     Navigator.push(context, MaterialPageRoute(builder: (context) => RegistrationPage()));
+                //   },
+                //   child: Text('Register for an account'),
+                // ),
               ],
             ),
           ),
