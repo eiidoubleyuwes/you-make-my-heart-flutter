@@ -13,18 +13,7 @@ class _SettingsPageState extends State<SettingsPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Formula Dart'),
-          centerTitle: true,
-          backgroundColor: primaryColor,
-          foregroundColor: appWhiteColor,
-          titleTextStyle: TextStyle(
-            color: headercolor,
-            fontSize: 34.0,
-            fontWeight: FontWeight.bold,
-          )),
-      body: ListView(
+    return ListView(
         padding: EdgeInsets.all(16.0),
         children: [
           SwitchListTile(
@@ -58,7 +47,6 @@ class _SettingsPageState extends State<SettingsPage> {
             label: 'Font Size: $_fontSize',
           ),
         ],
-      ),
-    );
+      );
   }
 }
