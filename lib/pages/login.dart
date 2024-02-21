@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:myapp_flutter/configs/constants.dart';
 import 'package:myapp_flutter/pages/registration.dart';
 import 'package:myapp_flutter/views/custombutton.dart';
@@ -90,7 +91,13 @@ class Login extends StatelessWidget {
                   height: 10.0,
                 ),
 
-                custombutton(label: 'Button',),
+                //custombutton(label: 'Button',),
+                //Creating a custom button to text routing
+                MaterialButton(onPressed: () => Get.toNamed("/home"), //The route is called using an anonymous function
+                child: Text('Login'),
+                color: primaryColor,
+                textColor: appWhiteColor,
+                elevation: 5.0,),
                  SizedBox(
                   height: 10.0,
                 ),
