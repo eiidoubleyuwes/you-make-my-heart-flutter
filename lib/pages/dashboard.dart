@@ -1,8 +1,10 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:myapp_flutter/configs/constants.dart';
+import 'package:myapp_flutter/controllers/homecontroller.dart';
 import 'package:myapp_flutter/views/newscards.dart';
-
+HomeController homeController = Get.put(HomeController());
 class Dashboard extends StatelessWidget {
   final List<NewsCard> news = [
     NewsCard(
@@ -26,7 +28,7 @@ class Dashboard extends StatelessWidget {
       imageUrl: "assets/images/red-bull.png",
     ),
   ];
-
+ 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
