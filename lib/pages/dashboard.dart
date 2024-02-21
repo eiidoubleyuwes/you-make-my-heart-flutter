@@ -56,13 +56,15 @@ class Dashboard extends StatelessWidget {
         ],
       ),
       bottomNavigationBar: CurvedNavigationBar(
-      backgroundColor: primaryColor,
-       items: [
+        backgroundColor: primaryColor,
+        items: [
           Icon(Icons.home),
           Icon(Icons.calendar_month),
           Icon(Icons.settings),
-       ],
-       onTap: (index) => {},
+        ],
+        onTap: (index) {
+         
+        },
       ),
     );
   }
