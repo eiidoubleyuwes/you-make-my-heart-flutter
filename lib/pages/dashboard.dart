@@ -5,12 +5,12 @@ import 'package:myapp_flutter/configs/constants.dart';
 import 'package:myapp_flutter/controllers/homecontroller.dart';
 import 'package:myapp_flutter/pages/news.dart';
 import 'package:myapp_flutter/pages/settings.dart';
-import 'package:myapp_flutter/views/newscards.dart';
 
 HomeController homeController = Get.put(HomeController());
 
 var pages = [ 
   newsPage(),
+  //Space for the calender view of all the races and track details
   SettingsPage(),
   //Text("Settings"),
 ];
