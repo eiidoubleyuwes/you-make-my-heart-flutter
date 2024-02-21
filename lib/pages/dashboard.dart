@@ -30,7 +30,6 @@ class Dashboard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: true,
           title: Text('Formula Dart'),
           centerTitle: true,
           backgroundColor: primaryColor,
