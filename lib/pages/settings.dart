@@ -16,12 +16,7 @@ class _SettingsPageState extends State<SettingsPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Settings', style: TextStyle(color: Colors.white)),
-        backgroundColor: damn,
-      ),
-      body: ListView.builder(
+    return ListView.builder(
         padding: EdgeInsets.all(16.0),
         itemCount: 2, // Assuming only two SwitchListTile items
         itemBuilder: (context, index) {
@@ -60,7 +55,6 @@ class _SettingsPageState extends State<SettingsPage> {
               return SizedBox(); // Handle potential out-of-bounds index
           }
         },
-      ),
-    );
+      );
   }
 }
