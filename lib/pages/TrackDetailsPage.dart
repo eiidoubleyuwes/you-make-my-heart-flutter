@@ -7,7 +7,7 @@ class TrackDetailsPage extends StatelessWidget {
   const TrackDetailsPage({Key? key, required this.race}) : super(key: key);
 
   final meh = const Color(0xFFEC0023); // F1 Red
-  final accentColor = const Color(0xFF00D7FF); // F1 Blue
+  final accentColor = const Color.fromARGB(255, 0, 0, 0); // F1 Black
 
   @override
   Widget build(BuildContext context) {
