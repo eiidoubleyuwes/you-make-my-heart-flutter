@@ -6,6 +6,7 @@ class customText extends StatelessWidget {
   final FontWeight? fontWeight;
   final FontSize? fontSize;
   final TextEditingController? controller;
+  final Color? color;
   customText(
     String s, {
     super.key,
@@ -13,7 +14,7 @@ class customText extends StatelessWidget {
     this.fontWeight,
     this.fontSize, 
     this.controller,
-   
+    this.color,
   });
 
   @override
