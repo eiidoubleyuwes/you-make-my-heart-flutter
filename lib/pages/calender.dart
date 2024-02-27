@@ -29,13 +29,9 @@ class F1Race {
   });
 }
 
-// Add more races here with optional circuit image URLs
+// Add more races 
 final List<F1Race> f1Races = [
-  F1Race(
-      name: 'Australian Grand Prix',
-      date: '21 March 2024',
-      time: '06:00 AM',
-      circuitImage: 'https://example.com/images/albert_park.jpg'), // Example image
+  F1Race(name: 'Australian Grand Prix',date: '21 March 2024',time: '06:00 AM',),
   F1Race(name: 'Bahrain Grand Prix', date: '28 March 2024', time: '06:00 AM'),
   F1Race(name: 'Vietnam Grand Prix', date: '11 April 2024', time: '07:00 AM'),
   F1Race(name: 'Emilia Romagna Grand Prix', date: '21 April 2024', time: '09:00 AM'),
