@@ -6,29 +6,66 @@ class TrackDetailsPage extends StatelessWidget {
 
   const TrackDetailsPage({Key? key, required this.race}) : super(key: key);
 
+  final meh = const Color(0xFFEC0023); // F1 Red
+  final accentColor = const Color(0xFF00D7FF); // F1 Blue
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(race.name),
+        title: Text(race.name, style: TextStyle(color: Colors.white)),
+        backgroundColor: meh,
       ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start, // Align content left
             children: [
               // Display track image (implementation needed)
               Text(
                 "Track Information",
-                style: Theme.of(context).textTheme.headline6,
+                style: TextStyle(
+                  fontSize: 24.0,
+                  fontWeight: FontWeight.bold,
+                  color: meh,
+                ),
               ),
               const SizedBox(height: 10.0),
 
-              // Display track details (circuit length, layout image, history, etc.)
+              // Track details with dividers
+              _buildTrackDetail("Circuit Length:", "5.303 km"),
+              Divider(color: accentColor), // Add divider
+              _buildTrackDetail(
+                  "Lap Record:", "1:27.097 (Sebastian Vettel, Ferrari, 2019)"),
+               Divider(color: accentColor), // Add divider
+              _buildTrackDetail("Location:", "Melbourne, Australia"),
+              Divider(color: accentColor), // Add divider
+
             ],
           ),
         ),
       ),
+    );
+  }
+
+  Widget _buildTrackDetail(String label, String value) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          label,
+          style: TextStyle(
+            fontSize: 16.0,
+            color: meh,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        Text(
+          value,
+          style: const TextStyle(fontSize: 16.0),
+        ),
+      ],
     );
   }
 }
