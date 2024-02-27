@@ -9,12 +9,6 @@ class RaceCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final trackImages = {
-      'Australian Grand Prix': 'https://example.com/images/albert_park.jpg',
-      'Bahrain Grand Prix': 'https://example.com/images/bahrain_circuit.jpg',
-      // ... Add image URLs for other races
-    };
-
     return InkWell(
       onTap: () {
         // Navigate to track details page (implementation not provided)
@@ -32,9 +26,9 @@ class RaceCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // Display race image if available
-              if (trackImages.containsKey(race.name))
+              if (race.circuitImage != null)
                 Image.network(
-                  trackImages[race.name]!,
+                  race.circuitImage!,
                   height: 150.0,
                   width: double.infinity,
                   fit: BoxFit.cover,
