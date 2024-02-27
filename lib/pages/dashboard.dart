@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:myapp_flutter/configs/constants.dart';
 import 'package:myapp_flutter/controllers/homecontroller.dart';
+import 'package:myapp_flutter/pages/calender.dart';
 import 'package:myapp_flutter/pages/news.dart';
 import 'package:myapp_flutter/pages/settings.dart';
 
@@ -11,8 +12,9 @@ HomeController homeController = Get.put(HomeController());
 var pages = [ 
   newsPage(),
   //Space for the calender view of all the races and track details
-  SettingsPage(),
+  CalendarPage(),
   //Text("Settings"),
+  SettingsPage(),
 ];
 
 class Dashboard extends StatelessWidget {
