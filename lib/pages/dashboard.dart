@@ -27,6 +27,7 @@ class Dashboard extends StatelessWidget {
           centerTitle: true,
           backgroundColor: primaryColor,
           foregroundColor: appWhiteColor,
+          automaticallyImplyLeading: false,
           titleTextStyle: TextStyle(
             color: headercolor,
             fontSize: 34.0,
@@ -36,7 +37,8 @@ class Dashboard extends StatelessWidget {
          Obx(() => pages[homeController.selectedPage.value]) ,
           // F1 News Section
       bottomNavigationBar: CurvedNavigationBar(
-        backgroundColor: primaryColor,
+        backgroundColor: appWhiteColor,
+        color: primaryColor,
         items: [
           Icon(Icons.home),
           Icon(Icons.calendar_month),
