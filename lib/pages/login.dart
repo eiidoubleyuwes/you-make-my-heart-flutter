@@ -97,6 +97,7 @@ class Login extends StatelessWidget {
 
                 custombutton(
                     label: 'Login',
+                    labelColor: appWhiteColor,
                     action: () {
                       if (usernameController.text == adminUsername &&
                           passwordController.text == adminPassword) {
@@ -118,7 +119,7 @@ class Login extends StatelessWidget {
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
                             content: Text("Invalid username or password"),
-                            backgroundColor: Colors.red,
+                            backgroundColor: primaryColor,
                           ),
                         );
                       }
