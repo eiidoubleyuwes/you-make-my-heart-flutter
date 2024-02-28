@@ -6,6 +6,9 @@ import 'package:myapp_flutter/views/custombutton.dart';
 import 'package:myapp_flutter/views/customcontroller.dart';
 import 'package:myapp_flutter/views/customtexts.dart';
 
+const adminUsername = 'admin';
+const adminPassword = 'admin';
+
 class Login extends StatelessWidget {
   const Login({super.key});
   @override
@@ -19,6 +22,7 @@ class Login extends StatelessWidget {
           centerTitle: true,
           backgroundColor: primaryColor,
           foregroundColor: appWhiteColor,
+        automaticallyImplyLeading: false,
           titleTextStyle: TextStyle(
             color: headercolor,
             fontSize: 34.0,
@@ -27,14 +31,14 @@ class Login extends StatelessWidget {
       body: SingleChildScrollView(
         child: Center(
           child: Padding(
-            padding: const EdgeInsets.all(100.0),
+            padding: const EdgeInsets.all(10.0),
             child: Column(
               // mainAxisAlignment: MainAxisAlignment.center,
               // crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 //Created a widget for the text
                 Image.asset(
-                  "assets/images/mylogo.png",
+                  "assets/images/applogo.png",
                   height: 200,
                   width: 300,
                 ),
@@ -51,7 +55,7 @@ class Login extends StatelessWidget {
                 customText(
                   "Username",
                   label: 'Username',
-                  fontSize: FontSize(18.0), 
+                  fontSize: FontSize(18.0),
                 ),
                 CustomTextWidget(
                   "Username",
@@ -91,9 +95,36 @@ class Login extends StatelessWidget {
                   height: 10.0,
                 ),
 
-                custombutton(label: 'Login', action: navigatetoHome),
-                
-                 SizedBox(
+                custombutton(
+                    label: 'Login',
+                    action: () {
+                      if (usernameController.text == adminUsername &&
+                          passwordController.text == adminPassword) {
+                        Get.toNamed("/home"); // Redirect to dashboard area
+                      } else {
+                        setState(() {
+                          // Highlight text fields in red
+                          usernameController.text = ""; // Clear username field
+                          passwordController.text = ""; // Clear password field
+                          usernameController.selection =
+                              TextSelection.fromPosition(TextPosition(
+                                  offset:
+                                      0)); // Place cursor at the beginning of username field
+                          passwordController.selection =
+                              TextSelection.fromPosition(TextPosition(
+                                  offset:
+                                      0)); // Place cursor at the beginning of password field
+                        });
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text("Invalid username or password"),
+                            backgroundColor: Colors.red,
+                          ),
+                        );
+                      }
+                    }),
+
+                SizedBox(
                   height: 10.0,
                 ),
 
@@ -105,7 +136,6 @@ class Login extends StatelessWidget {
                 SizedBox(
                   height: 10.0,
                 ),
-                
               ],
             ),
           ),
@@ -113,7 +143,6 @@ class Login extends StatelessWidget {
       ),
     );
   }
-  void navigatetoHome() {
-    Get.toNamed("/home");
-  }
+
+  void setState(Null Function() param0) {}
 }
