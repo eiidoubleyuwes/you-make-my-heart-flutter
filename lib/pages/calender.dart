@@ -33,7 +33,7 @@ class F1Race {
 final List<F1Race> f1Races = [
   F1Race(name: 'Australian Grand Prix',date: '21 March 2024',time: '06:00 AM',),
   F1Race(name: 'Bahrain Grand Prix', date: '28 March 2024', time: '06:00 AM'),
-  F1Race(name: 'Vietnam Grand Prix', date: '11 April 2024', time: '07:00 AM'),
+  F1Race(name: 'Nairobi Grand Prix', date: '11 April 2024', time: '07:00 AM'),
   F1Race(name: 'Emilia Romagna Grand Prix', date: '21 April 2024', time: '09:00 AM'),
   F1Race(name: 'Miami Grand Prix', date: '05 May 2024', time: '09:00 AM'),
   F1Race(name: 'Spanish Grand Prix', date: '19 May 2024', time: '09:00 AM'),
