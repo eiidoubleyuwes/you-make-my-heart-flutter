@@ -41,6 +41,12 @@ class TrackDetailsPage extends StatelessWidget {
                Divider(color: accentColor), // Add divider
               _buildTrackDetail("Location:", "Melbourne, Australia"),
               Divider(color: accentColor), // Add divider
+              _buildTrackDetail("First Grand Prix:", "1996"),
+              Divider(color: accentColor), // Add divider
+              _buildTrackDetail("Number of Laps:", "58"),
+              Divider(color: accentColor), // Add divider
+              _buildTrackDetail("Fun Fact", "The track is a public road for 9 months of the year"),
+              Divider(color: accentColor), // Add divider
 
             ],
           ),
