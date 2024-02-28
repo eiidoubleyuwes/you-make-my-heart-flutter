@@ -19,7 +19,7 @@ class _SettingsPageState extends State<SettingsPage> {
   Widget build(BuildContext context) {
     return ListView.builder(
       padding: EdgeInsets.all(16.0),
-      itemCount: 2, // Assuming only two SwitchListTile items
+      itemCount: 3, // Assuming only two SwitchListTile items
       itemBuilder: (context, index) {
         switch (index) {
           case 0:
