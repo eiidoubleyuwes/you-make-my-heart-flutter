@@ -57,6 +57,8 @@ class _SettingsPageState extends State<SettingsPage> {
             return custombutton(
                 label: 'Log out', 
                 labelColor: appWhiteColor,
+                //The button should not fill the screen
+
                 action: () => Get.toNamed("/login"));
           default:
             return const SizedBox(); // Handle potential out-of-bounds index
