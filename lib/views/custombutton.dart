@@ -7,10 +7,12 @@ import 'package:myapp_flutter/views/customtexts.dart';
 class custombutton extends StatelessWidget {
   final VoidCallback action;
   final String label;
+  final Color? labelColor;
   const custombutton({
     super.key,
     required this.label,
-    required this.action,
+    required this.action, 
+    this.labelColor,
     // ignore: non_constant_identifier_names
   });
 
@@ -31,7 +33,10 @@ class custombutton extends StatelessWidget {
       onPressed: () {
         action();
       },
-      child: customText( label, label: label,),
+      child: customText(
+        label,
+        label: label,
+      ),
     );
   }
 }
