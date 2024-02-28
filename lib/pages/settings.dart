@@ -55,7 +55,9 @@ class _SettingsPageState extends State<SettingsPage> {
           //Custom button to route back to the login page once clicked
           case 2:
             return custombutton(
-                label: 'Log out', action: () => Get.toNamed("/login"));
+                label: 'Log out', 
+                labelColor: appWhiteColor,
+                action: () => Get.toNamed("/login"));
           default:
             return const SizedBox(); // Handle potential out-of-bounds index
         }
