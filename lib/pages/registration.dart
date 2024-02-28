@@ -110,6 +110,7 @@ class RegistrationPage extends StatelessWidget {
                 //Button to navigate to the login page
                 custombutton(
                   label: 'Register',
+                  labelColor: appWhiteColor,
                   action: () => Get.toNamed("/login"),
                 ),
               ],
