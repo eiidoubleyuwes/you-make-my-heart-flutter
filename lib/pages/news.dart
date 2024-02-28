@@ -23,6 +23,11 @@ class newsPage extends StatelessWidget {
       subtitle: "First win for Him back at Red Bull",
       imageUrl: "assets/images/red-bull.png",
     ),
+     NewsCard(
+      title: "Mercedes distraught afther Hamilton exit",
+      subtitle: "Fred Vasseur: 'We were lucky'",
+      imageUrl: "assets/images/look.png",
+    ),
   ];
   newsPage({super.key});
 
