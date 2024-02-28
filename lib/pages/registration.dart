@@ -24,14 +24,14 @@ class RegistrationPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Center(
           child: Padding(
-            padding: const EdgeInsets.all(100.0),
+            padding: const EdgeInsets.all(10.0),
             child: Column(
               // mainAxisAlignment: MainAxisAlignment.center,
               // crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 //Created a widget for the text
                 Image.asset(
-                  "assets/images/mylogo.png",
+                  "assets/images/applogo.png",
                   height: 200,
                   width: 300,
                 ),
@@ -103,11 +103,6 @@ class RegistrationPage extends StatelessWidget {
                   height: 10.0,
                 ),
 
-                customText(
-                  "We love you here",
-                  label: 'Welcome to the start of something beautiful',
-                  fontSize: FontSize(18.0),
-                ),
                 SizedBox(
                   height: 10.0,
                 ),
