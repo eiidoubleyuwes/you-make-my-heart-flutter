@@ -28,6 +28,8 @@ class Api_test extends StatelessWidget {
                 return Row(children: [
                   Text('${studentController.studentList[index].sname}'),
                   Text('${studentController.studentList[index].admissionum}'),
+                  Text('${studentController.studentList[index].id}'),
+
                 ]);
               },
             ),
