@@ -26,6 +26,9 @@ class Api_test extends StatelessWidget {
               itemCount: studentController.studentList.length,
               itemBuilder: (context, index) {
                 return Row(children: [
+                  Text("${index + 1}"),
+                  Image.network('${studentController.studentList[index].image}'),
+                  //In the database,save the image name
                   Text('${studentController.studentList[index].sname}'),
                   Text('${studentController.studentList[index].admissionum}'),
                   Text('${studentController.studentList[index].id}'),
