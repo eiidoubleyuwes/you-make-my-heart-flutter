@@ -1,0 +1,7 @@
+This is a file I'm creating to take notes within the file
+
+First of all,to use images in the project
+
+	1. Navigate to the home page of your server and create a folder for the images ie barakambuguaon.top/student/images/
+	2. Add the name of the file in the database ie baraka.png
+	3. In your flutter code add the file path and attach to the URL ie barakambuguaon.top/student/images/${studentcontroller.studentList[index].image} 
