@@ -4,7 +4,7 @@ import 'package:myapp_flutter/utils/routes.dart';
 
 void main() {
   runApp(GetMaterialApp(
-    initialRoute: "/api_test", // Change the initial route to /login
+    initialRoute: "/", // Change the initial route to /login
     debugShowCheckedModeBanner: false,
     getPages: Routes.routes,  // Add the routes
   ));
