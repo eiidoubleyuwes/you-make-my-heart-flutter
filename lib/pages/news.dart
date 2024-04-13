@@ -1,3 +1,5 @@
+// ignore_for_file: camel_case_types
+
 import 'package:flutter/material.dart';
 import 'package:myapp_flutter/views/newscards.dart';
 
@@ -35,7 +37,7 @@ class newsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(height: 20.0),
+        const SizedBox(height: 20.0),
         // F1 News Section
         Expanded(
           child: ListView.builder(
