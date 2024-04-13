@@ -1,9 +1,6 @@
+// ignore_for_file: camel_case_types
 import 'package:flutter/material.dart';
 import 'package:myapp_flutter/configs/constants.dart';
-import 'package:myapp_flutter/pages/dashboard.dart';
-import 'package:myapp_flutter/views/customcontroller.dart';
-import 'package:myapp_flutter/views/customtexts.dart';
-
 class custombutton extends StatelessWidget {
   final VoidCallback action;
   final String label;
@@ -25,7 +22,7 @@ class custombutton extends StatelessWidget {
         disabledForegroundColor: appWhiteColor,
         elevation: 5.0,
         shadowColor: appWhiteColor,
-        padding: EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(20.0),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10.0),
         ),
@@ -33,9 +30,13 @@ class custombutton extends StatelessWidget {
       onPressed: () {
         action();
       },
-      child: customText(
+      child: Text(
         label,
-        label: label,
+        style: TextStyle(
+          color: labelColor ?? appWhiteColor,
+          fontSize: 18.0,
+          fontWeight: FontWeight.bold,
+        ),
       ),
     );
   }
