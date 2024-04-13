@@ -7,3 +7,4 @@ const Color textcolorgrey = Color(0xFF757575);
 const Color textcolorlightgrey = Color(0xFFBDBDBD);
 const Color textcolorwhite = Color(0xFFFFFFFF);
 const Color textcolorblack = Color(0xFF000000);
+const Color ferrariyellow = Color(0xFFFDBE13);
