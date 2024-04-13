@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:myapp_flutter/configs/constants.dart';
-import 'package:myapp_flutter/pages/login.dart';
 import 'package:myapp_flutter/views/custombutton.dart';
 import 'package:myapp_flutter/views/customcontroller.dart';
 import 'package:myapp_flutter/views/customtexts.dart';
@@ -11,16 +10,7 @@ class RegistrationPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: true,
-          title: Text('Formula Dart'),
-          centerTitle: true,
-          backgroundColor: primaryColor,
-          foregroundColor: appWhiteColor,
-          titleTextStyle: TextStyle(
-            color: headercolor,
-            fontSize: 34.0,
-            fontWeight: FontWeight.bold,
-          )),
+        automaticallyImplyLeading: true,),
       body: SingleChildScrollView(
         child: Center(
           child: Padding(
@@ -35,47 +25,47 @@ class RegistrationPage extends StatelessWidget {
                   height: 200,
                   width: 300,
                 ),
-                customText(
+                const customText(
                   "Registration Screen",
                   label: 'Registration Page',
                   fontSize: FontSize(24.0),
                   fontWeight: FontWeight.bold,
                 ),
-                customText(
+                const customText(
                   "Username",
                   label: 'Username',
                   fontSize: FontSize(18.0),
                 ),
-                CustomTextWidget(
+                const CustomTextWidget(
                   "Username",
                   label: 'Username',
                   hint: "Username",
                   icon: Icons.person,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10.0,
                 ),
-                customText(
+                const customText(
                   "Phome number/email",
                   label: 'Phone number/email',
                   fontSize: FontSize(18.0),
                 ),
-                CustomTextWidget(
+                const CustomTextWidget(
                   "Phone number/email",
                   label: 'Phone number/email',
                   hint: "Phone number/Email",
                   icon: Icons.phone,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10.0,
                 ),
 
-                customText(
+                const customText(
                   "Password",
                   label: 'Password',
                   fontSize: FontSize(18.0),
                 ),
-                CustomTextWidget(
+                const CustomTextWidget(
                   "PASSWORD",
                   label: 'password',
                   hint: "Password",
@@ -83,27 +73,27 @@ class RegistrationPage extends StatelessWidget {
                   hideText: true,
                   ispassword: true,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10.0,
                 ),
-                customText(
+                const customText(
                   "Retype Password",
                   label: 'Retype Password',
                   fontSize: FontSize(18.0),
                 ),
-                CustomTextWidget(
+                const CustomTextWidget(
                   "PASSWORD",
-                  label: 'password',
+                  label: 'Confirm password',
                   hint: "Password",
                   icon: Icons.lock,
                   hideText: true,
                   ispassword: true,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10.0,
                 ),
 
-                SizedBox(
+                const SizedBox(
                   height: 10.0,
                 ),
 
