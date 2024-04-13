@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:myapp_flutter/configs/constants.dart';
-import 'package:myapp_flutter/pages/registration.dart';
 import 'package:myapp_flutter/views/custombutton.dart';
 import 'package:myapp_flutter/views/customcontroller.dart';
 import 'package:myapp_flutter/views/customtexts.dart';
@@ -17,17 +16,6 @@ class Login extends StatelessWidget {
     TextEditingController passwordController = TextEditingController();
 
     return Scaffold(
-      appBar: AppBar(
-          title: Text('Formula Dart'),
-          centerTitle: true,
-          backgroundColor: primaryColor,
-          foregroundColor: appWhiteColor,
-        automaticallyImplyLeading: false,
-          titleTextStyle: TextStyle(
-            color: headercolor,
-            fontSize: 34.0,
-            fontWeight: FontWeight.bold,
-          )),
       body: SingleChildScrollView(
         child: Center(
           child: Padding(
@@ -36,23 +24,26 @@ class Login extends StatelessWidget {
               // mainAxisAlignment: MainAxisAlignment.center,
               // crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                const SizedBox(
+                  height: 50.0,
+                ),
                 //Created a widget for the text
                 Image.asset(
                   "assets/images/applogo.png",
                   height: 200,
                   width: 300,
                 ),
-                customText(
+                const customText(
                   "Login Screen",
                   label: 'Login Page',
                   fontSize: FontSize(24.0),
                   fontWeight: FontWeight.bold,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10.0,
                 ),
 
-                customText(
+                const customText(
                   "Username",
                   label: 'Username',
                   fontSize: FontSize(18.0),
@@ -60,15 +51,15 @@ class Login extends StatelessWidget {
                 CustomTextWidget(
                   "Username",
                   label: 'Username',
-                  hint: "Phone number/Email",
+                  hint: "Username/email",
                   icon: Icons.person,
                   controller: usernameController,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10.0,
                 ),
 
-                customText(
+                const customText(
                   "Password",
                   label: 'Password',
                   fontSize: FontSize(18.0),
@@ -82,16 +73,16 @@ class Login extends StatelessWidget {
                   ispassword: true,
                   controller: passwordController,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10.0,
                 ),
 
-                customText(
+                const customText(
                   "Forgot password",
                   label: 'Forgot password?',
                   fontSize: FontSize(18.0),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10.0,
                 ),
 
@@ -108,16 +99,16 @@ class Login extends StatelessWidget {
                           usernameController.text = ""; // Clear username field
                           passwordController.text = ""; // Clear password field
                           usernameController.selection =
-                              TextSelection.fromPosition(TextPosition(
+                              TextSelection.fromPosition(const TextPosition(
                                   offset:
                                       0)); // Place cursor at the beginning of username field
                           passwordController.selection =
-                              TextSelection.fromPosition(TextPosition(
+                              TextSelection.fromPosition(const TextPosition(
                                   offset:
                                       0)); // Place cursor at the beginning of password field
                         });
                         ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(
+                          const SnackBar(
                             content: Text("Invalid username or password"),
                             backgroundColor: primaryColor,
                           ),
@@ -125,7 +116,7 @@ class Login extends StatelessWidget {
                       }
                     }),
 
-                SizedBox(
+                const SizedBox(
                   height: 10.0,
                 ),
 
@@ -134,7 +125,7 @@ class Login extends StatelessWidget {
                   label: 'Register',
                   action: () => Get.toNamed("/registration"),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10.0,
                 ),
               ],
