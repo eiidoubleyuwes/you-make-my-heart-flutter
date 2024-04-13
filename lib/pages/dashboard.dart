@@ -25,11 +25,10 @@ class Dashboard extends StatelessWidget {
       appBar: AppBar(
           title: const Text('Parc Ferme'),
           centerTitle: true,
-          backgroundColor: primaryColor,
-          foregroundColor: appWhiteColor,
+          backgroundColor: appWhiteColor,
           automaticallyImplyLeading: false,
           titleTextStyle: const TextStyle(
-            color: headercolor,
+            color: primaryColor,
             fontSize: 34.0,
             fontWeight: FontWeight.bold,
           )),
@@ -37,8 +36,8 @@ class Dashboard extends StatelessWidget {
          Obx(() => pages[homeController.selectedPage.value]) ,
           // F1 News Section
       bottomNavigationBar: CurvedNavigationBar(
-        backgroundColor: appWhiteColor,
-        color: primaryColor,
+        backgroundColor: primaryColor,
+        color: appWhiteColor,
         items: const [
           Icon(Icons.history_edu_sharp),
           Icon(Icons.calendar_month),
