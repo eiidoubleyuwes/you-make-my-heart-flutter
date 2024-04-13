@@ -1,3 +1,5 @@
+// ignore_for_file: camel_case_types
+
 import 'package:flutter/material.dart';
 import 'package:myapp_flutter/configs/constants.dart';
 
@@ -7,7 +9,7 @@ class customText extends StatelessWidget {
   final FontSize? fontSize;
   final TextEditingController? controller;
   final Color? color;
-  customText(
+  const customText(
     String s, {
     super.key,
     required this.label,
