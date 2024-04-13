@@ -23,12 +23,12 @@ class Dashboard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Text('Formula Dart'),
+          title: const Text('Parc Ferme'),
           centerTitle: true,
           backgroundColor: primaryColor,
           foregroundColor: appWhiteColor,
           automaticallyImplyLeading: false,
-          titleTextStyle: TextStyle(
+          titleTextStyle: const TextStyle(
             color: headercolor,
             fontSize: 34.0,
             fontWeight: FontWeight.bold,
@@ -39,8 +39,8 @@ class Dashboard extends StatelessWidget {
       bottomNavigationBar: CurvedNavigationBar(
         backgroundColor: appWhiteColor,
         color: primaryColor,
-        items: [
-          Icon(Icons.home),
+        items: const [
+          Icon(Icons.history_edu_sharp),
           Icon(Icons.calendar_month),
           Icon(Icons.settings),
         ],
