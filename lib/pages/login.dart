@@ -84,6 +84,9 @@ class Login extends StatelessWidget {
                     labelColor: appWhiteColor,
                     action: () {
                       login();
+                      //clear the text fields
+                      usernameController.clear();
+                      passwordController.clear();
                     }),
 
                 const SizedBox(
