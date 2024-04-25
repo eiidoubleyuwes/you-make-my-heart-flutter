@@ -103,6 +103,11 @@ class RegistrationPage extends StatelessWidget {
                   labelColor: appWhiteColor,
                   action: () {
                     register();
+                    //Delete everything from the controllers
+                    username.clear();
+                    email.clear();
+                    password.clear();
+                    confpassword.clear();
                     }
                 ),
               ],
