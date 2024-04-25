@@ -1,20 +1,19 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:myapp_flutter/configs/constants.dart';
 import 'package:myapp_flutter/views/custombutton.dart';
 import 'package:myapp_flutter/views/customcontroller.dart';
 import 'package:myapp_flutter/views/customtexts.dart';
+import 'package:http/http.dart' as http;
 
-const adminUsername = 'admin';
-const adminPassword = 'admin';
-
+TextEditingController usernameController = TextEditingController();
+TextEditingController passwordController = TextEditingController();
 class Login extends StatelessWidget {
   const Login({super.key});
   @override
   Widget build(BuildContext context) {
-    TextEditingController usernameController = TextEditingController();
-    TextEditingController passwordController = TextEditingController();
-
     return Scaffold(
       body: SingleChildScrollView(
         child: Center(
@@ -49,11 +48,10 @@ class Login extends StatelessWidget {
                   fontSize: FontSize(18.0),
                 ),
                 CustomTextWidget(
-                  "Username",
-                  label: 'Username',
-                  hint: "Username/email",
+                  hint: "Username",
                   icon: Icons.person,
                   controller: usernameController,
+                  ispassword: false,
                 ),
                 const SizedBox(
                   height: 10.0,
@@ -65,13 +63,10 @@ class Login extends StatelessWidget {
                   fontSize: FontSize(18.0),
                 ),
                 CustomTextWidget(
-                  "PASSWORD",
-                  label: 'password',
                   hint: "Password",
-                  icon: Icons.lock,
-                  hideText: true,
-                  ispassword: true,
                   controller: passwordController,
+                  icon: Icons.lock,
+                  ispassword: true,
                 ),
                 const SizedBox(
                   height: 10.0,
@@ -90,30 +85,7 @@ class Login extends StatelessWidget {
                     label: 'Login',
                     labelColor: appWhiteColor,
                     action: () {
-                      if (usernameController.text == adminUsername &&
-                          passwordController.text == adminPassword) {
-                        Get.toNamed("/home"); // Redirect to dashboard area
-                      } else {
-                        setState(() {
-                          // Highlight text fields in red
-                          usernameController.text = ""; // Clear username field
-                          passwordController.text = ""; // Clear password field
-                          usernameController.selection =
-                              TextSelection.fromPosition(const TextPosition(
-                                  offset:
-                                      0)); // Place cursor at the beginning of username field
-                          passwordController.selection =
-                              TextSelection.fromPosition(const TextPosition(
-                                  offset:
-                                      0)); // Place cursor at the beginning of password field
-                        });
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(
-                            content: Text("Invalid username or password"),
-                            backgroundColor: primaryColor,
-                          ),
-                        );
-                      }
+                      login();
                     }),
 
                 const SizedBox(
@@ -136,5 +108,22 @@ class Login extends StatelessWidget {
     );
   }
 
-  void setState(Null Function() param0) {}
+  Future<void> login() async {
+    http.Response response;
+    response = await http.get(Uri.parse("http://barakambuguaon.top/news/login.php?username=${usernameController.text.trim()}&password=${passwordController.text.trim()}"));
+    if (response.statusCode == 200) {
+      var serverResponse = jsonDecode(response.body);
+      int login = serverResponse['success'];
+      if (login == 1) {
+        Get.toNamed("/home");
+      } else {
+        Get.snackbar("Login Failed", "Invalid username or password",
+            snackPosition: SnackPosition.BOTTOM,
+            backgroundColor: Colors.red,
+            colorText: Colors.white);
+      }
+    } else {
+      print("Failed to login ${response.statusCode}");
+    }
+  }
 }

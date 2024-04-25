@@ -5,6 +5,8 @@ import 'package:myapp_flutter/views/custombutton.dart';
 import 'package:myapp_flutter/views/customcontroller.dart';
 import 'package:myapp_flutter/views/customtexts.dart';
 
+TextEditingController username = TextEditingController();
+TextEditingController password = TextEditingController();
 class RegistrationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -16,8 +18,6 @@ class RegistrationPage extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(10.0),
             child: Column(
-              // mainAxisAlignment: MainAxisAlignment.center,
-              // crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 //Created a widget for the text
                 Image.asset(
@@ -36,25 +36,11 @@ class RegistrationPage extends StatelessWidget {
                   label: 'Username',
                   fontSize: FontSize(18.0),
                 ),
-                const CustomTextWidget(
-                  "Username",
-                  label: 'Username',
+                CustomTextWidget(
                   hint: "Username",
                   icon: Icons.person,
-                ),
-                const SizedBox(
-                  height: 10.0,
-                ),
-                const customText(
-                  "Phome number/email",
-                  label: 'Phone number/email',
-                  fontSize: FontSize(18.0),
-                ),
-                const CustomTextWidget(
-                  "Phone number/email",
-                  label: 'Phone number/email',
-                  hint: "Phone number/Email",
-                  icon: Icons.phone,
+                  controller: username,
+                  ispassword: false,
                 ),
                 const SizedBox(
                   height: 10.0,
@@ -65,12 +51,10 @@ class RegistrationPage extends StatelessWidget {
                   label: 'Password',
                   fontSize: FontSize(18.0),
                 ),
-                const CustomTextWidget(
-                  "PASSWORD",
-                  label: 'password',
+                CustomTextWidget(
                   hint: "Password",
                   icon: Icons.lock,
-                  hideText: true,
+                  controller: password,
                   ispassword: true,
                 ),
                 const SizedBox(
@@ -81,18 +65,12 @@ class RegistrationPage extends StatelessWidget {
                   label: 'Retype Password',
                   fontSize: FontSize(18.0),
                 ),
-                const CustomTextWidget(
-                  "PASSWORD",
-                  label: 'Confirm password',
+                 CustomTextWidget(
                   hint: "Password",
                   icon: Icons.lock,
-                  hideText: true,
+                  controller: password,
                   ispassword: true,
                 ),
-                const SizedBox(
-                  height: 10.0,
-                ),
-
                 const SizedBox(
                   height: 10.0,
                 ),
@@ -101,7 +79,7 @@ class RegistrationPage extends StatelessWidget {
                 custombutton(
                   label: 'Register',
                   labelColor: appWhiteColor,
-                  action: () => Get.toNamed("/login"),
+                  action: () => Get.toNamed("/home"),
                 ),
               ],
             ),

@@ -24,7 +24,7 @@ class Calculator extends StatelessWidget {
             label: "Enter Number 1",
           ),
           SizedBox(height: 20.0),
-          CustomTextWidget("Number 1", label: 'Number 1', controller: number),
+          CustomTextWidget( controller: number),
           SizedBox(height: 20.0),
           customText(
             "number",
@@ -32,8 +32,7 @@ class Calculator extends StatelessWidget {
           ),
           SizedBox(height: 20.0),
           CustomTextWidget(
-            "Number 2",
-            label: 'Number 2',
+
             controller: num,
           ),
           SizedBox(height: 20.0),

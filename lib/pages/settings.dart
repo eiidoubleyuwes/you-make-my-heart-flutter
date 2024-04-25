@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:myapp_flutter/configs/constants.dart';
@@ -15,37 +16,39 @@ class _SettingsPageState extends State<SettingsPage> {
 
   final damn = const Color(0xFFEC0023); // F1 Red
 
+
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      padding: EdgeInsets.all(10.0),
-      itemCount: 3, 
+      padding: const EdgeInsets.all(10.0),
+      itemCount: 3,
       itemBuilder: (context, index) {
         switch (index) {
           case 0:
             return SwitchListTile(
-              title: customText(
-                "Dark Mode", // Changed "Dark Mode" to "Dark Mode
-                label: 'Dark Mode',
+              title: const customText(
+                "Dark Mode",
+                label: 'Birthday reminder',
                 fontWeight: FontWeight.bold,
-                color: damn,
               ),
               value: _darkModeEnabled,
+              activeColor: ferrariyellow,
               onChanged: (value) {
                 setState(() {
-                  _darkModeEnabled = value;
+                  _darkModeEnabled = value;// Call updateTheme method
                 });
               },
             );
           case 1:
             return SwitchListTile(
               title: customText(
-                "Notifications", // Changed "Notifications" to "Notifications
+                "Notifications",
                 label: 'Notifications',
                 fontWeight: FontWeight.bold,
                 color: damn,
               ),
               value: _notificationsEnabled,
+              activeColor: ferrariyellow,
               onChanged: (value) {
                 setState(() {
                   _notificationsEnabled = value;
@@ -54,12 +57,14 @@ class _SettingsPageState extends State<SettingsPage> {
             );
           //Custom button to route back to the login page once clicked
           case 2:
-            return custombutton(
-                label: 'Log out', 
-                labelColor: appWhiteColor,
-                //The button should not fill the screen
-
-                action: () => Get.toNamed("/login"));
+            return Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: custombutton(
+                  label: 'Account',
+                  labelColor: appWhiteColor,
+                  //The button should not fill the screen
+                  action: () => Get.toNamed("/login")),
+            );
           default:
             return const SizedBox(); // Handle potential out-of-bounds index
         }

@@ -1,36 +1,56 @@
 import 'package:flutter/material.dart';
-import 'package:myapp_flutter/configs/constants.dart';
 
-class CustomTextWidget extends StatelessWidget {
+class CustomTextWidget extends StatefulWidget {
   final String? hint;
   final IconData? icon;
-  final bool? hideText;
-  final bool ispassword;
-  final TextEditingController? controller;
-  const CustomTextWidget(
-    String s, {
+  final TextEditingController controller;
+  final ispassword;
+
+  const CustomTextWidget({
     super.key,
-    required String label,
     this.hint,
     this.icon,
-    this.hideText = false,
+    required this.controller,
     this.ispassword = false,
-    this.controller,
   });
 
   @override
+  State<CustomTextWidget> createState() => _CustomTextWidgetState();
+}
+
+class _CustomTextWidgetState extends State<CustomTextWidget> {
+  bool _hidePassword = true;
+
+  @override
   Widget build(BuildContext context) {
-    return TextField(
-      decoration: InputDecoration(
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.0),
-        borderSide: BorderSide(color: primaryColor, width: 2.0),
+    if (widget.ispassword) {
+      return TextField(
+        controller: widget.controller,
+        obscureText: _hidePassword,
+        decoration: InputDecoration(
+          border: OutlineInputBorder(),
+          hintText: widget.hint,
+          prefixIcon: Icon(widget.icon),
+          suffixIcon: IconButton(
+            icon: Icon(_hidePassword ? Icons.visibility : Icons.visibility_off),
+            onPressed: () {
+              setState(() {
+                _hidePassword = !_hidePassword;
+              });
+            },
+          ),
         ),
-        hintText: hint,
-        prefixIcon: Icon(icon),
-        suffixIcon: ispassword? Icon(Icons.visibility): Container(height: 10,width: 10,),
-      ),
-      controller: controller,
-      obscureText: hideText!,
-    );
+      );
+    } else {
+      return TextField(
+        controller: widget.controller,
+        decoration: InputDecoration(
+          border: OutlineInputBorder(),
+          hintText: widget.hint,
+          prefixIcon: Icon(widget.icon),
+        ),
+      );
+    }
+
   }
 }
