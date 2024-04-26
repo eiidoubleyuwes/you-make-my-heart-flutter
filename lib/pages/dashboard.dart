@@ -11,7 +11,7 @@ import 'package:myapp_flutter/pages/settings.dart';
 HomeController homeController = Get.put(HomeController());
 
 var pages = [ 
-  newsPage(),
+  const newsPage(),
   //Space for a list of all race winners 
   RaceWinnersPage(),
   //Predictions page
@@ -21,6 +21,7 @@ var pages = [
 ];
 
 class Dashboard extends StatelessWidget {
+  const Dashboard({super.key});
   
   @override
   Widget build(BuildContext context) {
