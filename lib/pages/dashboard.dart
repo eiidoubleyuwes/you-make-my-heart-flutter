@@ -33,6 +33,7 @@ class Dashboard extends StatelessWidget {
             fontWeight: FontWeight.bold,
           )),
       body:  
+      //Setting default to index
          Obx(() => pages[homeController.selectedPage.value]) ,
           // F1 News Section
       bottomNavigationBar: CurvedNavigationBar(
