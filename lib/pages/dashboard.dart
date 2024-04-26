@@ -3,17 +3,20 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:myapp_flutter/configs/constants.dart';
 import 'package:myapp_flutter/controllers/homecontroller.dart';
-import 'package:myapp_flutter/pages/calender.dart';
 import 'package:myapp_flutter/pages/news.dart';
+import 'package:myapp_flutter/pages/racewinners.dart';
+import 'package:myapp_flutter/pages/rumors.dart';
 import 'package:myapp_flutter/pages/settings.dart';
 
 HomeController homeController = Get.put(HomeController());
 
 var pages = [ 
   newsPage(),
-  //Space for the calender view of all the races and track details
-  CalendarPage(),
-  //Text("Settings"),
+  //Space for a list of all race winners 
+  RaceWinnersPage(),
+  //Predictions page
+  RumorsPage(),
+  //Account management page
   SettingsPage(),
 ];
 
@@ -41,7 +44,8 @@ class Dashboard extends StatelessWidget {
         color: appWhiteColor,
         items: const [
           Icon(Icons.history_edu_sharp),
-          Icon(Icons.calendar_month),
+          Icon(Icons.emoji_events_sharp),
+          Icon(Icons.track_changes_outlined),
           Icon(Icons.settings),
         ],
         onTap: (index) {
