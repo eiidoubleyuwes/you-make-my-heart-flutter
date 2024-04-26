@@ -1,12 +1,26 @@
 import 'package:flutter/material.dart';
 class NewsCard {
-  final String title;
-  final String subtitle;
-  final String imageUrl;
+  var title;
+  var subtitle;
+  var imageUrl;
+  var decription;
 
-  NewsCard(
-      {required this.title, required this.subtitle, required this.imageUrl});
+  NewsCard({
+    required this.title,
+    required this.subtitle,
+    this.imageUrl,
+    this.decription,
+  });
+  factory NewsCard.fromJson(Map<String, dynamic> json) {
+    return NewsCard(
+      title: json['title'],
+      subtitle: json['subtitle'],
+      imageUrl: json['imageUrl'],
+      decription: json['decription'],
+    );
+  }
 }
+
 
 class NewsCardWidget extends StatelessWidget {
   final NewsCard news;
