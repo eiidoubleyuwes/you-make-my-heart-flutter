@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:myapp_flutter/configs/constants.dart';
@@ -99,17 +97,16 @@ class RegistrationPage extends StatelessWidget {
 
                 //Button to navigate to the login page
                 custombutton(
-                  label: 'Register',
-                  labelColor: appWhiteColor,
-                  action: () {
-                    register();
-                    //Delete everything from the controllers
-                    username.clear();
-                    email.clear();
-                    password.clear();
-                    confpassword.clear();
-                    }
-                ),
+                    label: 'Register',
+                    labelColor: appWhiteColor,
+                    action: () {
+                      register();
+                      //Delete everything from the controllers
+                      username.clear();
+                      email.clear();
+                      password.clear();
+                      confpassword.clear();
+                    }),
               ],
             ),
           ),
@@ -121,7 +118,12 @@ class RegistrationPage extends StatelessWidget {
 
 Future<void> register() async {
   var waitforsnakbar = false;
-  if (password.text.trim() == confpassword.text.trim() && username.text.isNotEmpty && email.text.isNotEmpty && password.text.isNotEmpty && confpassword.text.isNotEmpty && !waitforsnakbar) {
+  if (password.text.trim() == confpassword.text.trim() &&
+      username.text.isNotEmpty &&
+      email.text.isNotEmpty &&
+      password.text.isNotEmpty &&
+      confpassword.text.isNotEmpty &&
+      !waitforsnakbar) {
     http.Response response;
     response = await http.post(
       Uri.parse("http://barakambuguaon.top/news/register.php"),
@@ -135,17 +137,16 @@ Future<void> register() async {
         snackPosition: SnackPosition.BOTTOM,
         backgroundColor: Colors.green,
         colorText: Colors.white);
-        waitforsnakbar = true;
+    waitforsnakbar = true;
     await Future.delayed(const Duration(seconds: 1));
     waitforsnakbar = false;
     Get.toNamed("/login");
-  } else if (password.text.trim() != confpassword.text.trim()){
+  } else if (password.text.trim() != confpassword.text.trim()) {
     Get.snackbar("Passwords don't match", "Please retype the password",
         snackPosition: SnackPosition.BOTTOM,
         backgroundColor: Colors.red,
         colorText: Colors.white);
-  }
-  else {
+  } else {
     Get.snackbar("Registration Failed", "Please fill in all the fields",
         snackPosition: SnackPosition.BOTTOM,
         backgroundColor: Colors.red,
