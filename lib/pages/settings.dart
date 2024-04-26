@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:myapp_flutter/configs/constants.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:myapp_flutter/views/custombutton.dart';
+import 'package:http/http.dart' as http;
 
 class SettingsPage extends StatefulWidget {
   @override
@@ -9,44 +10,44 @@ class SettingsPage extends StatefulWidget {
 }
 
 class _SettingsPageState extends State<SettingsPage> {
-  bool isLoggedIn = false;
-  String username = '';
-  String imageUrl = '';
+  String username = ''; // Placeholder for the username from the server
 
+  @override
+  void initState() {
+    super.initState();
+    // Fetch the username from the server and update the state
+    fetchUsername().then((value) {
+      setState(() {
+        username = value;
+      });
+    });
+  }
+
+  Future<String> fetchUsername() async {
+    // Simulate an API call to fetch the username from the server
+    http.Response response;
+    response = await http.get(Uri.parse("http://barakambuguaon.top/news/username.php"));
+    
+    // Return the username from the response
+    return response.body;
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Settings'),
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            if (isLoggedIn)
-              Column(
-                children: [
-                  Text('Logged in as: $username'),
-                  SizedBox(height: 20),
-                  CircleAvatar(
-                    radius: 50,
-                    backgroundImage: NetworkImage(imageUrl),
-                  ),
-                  SizedBox(height: 20),
-                ],
-              )
-            else
-              Column(
-                children: [
-                  Text('No account signed in', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: ferrariyellow)),
-                  SizedBox(height: 20),
-                  custombutton(label: "Login" ,action: () {
-                    Get.toNamed('/login');
-                  }),
-                  SizedBox(height: 20),
-                 custombutton(label: "Register", action: () {
-                    Get.toNamed('/registration');
-                  }),
-                ],
-              ),
-          ],
+            Text(
+              'Username: $username',
+              style: TextStyle(fontSize: 18),
+            ),
+            SizedBox(height: 20),
+            custombutton(label: "Sign out/up", action: () => Get.offAndToNamed("/login")),
+            ],
         ),
       ),
     );
