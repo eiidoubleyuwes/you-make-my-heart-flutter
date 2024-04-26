@@ -3,20 +3,20 @@ class NewsCard {
   var title;
   var subtitle;
   var imageUrl;
-  var decription;
+  var description;
 
   NewsCard({
     required this.title,
     required this.subtitle,
     this.imageUrl,
-    this.decription,
+    this.description,
   });
   factory NewsCard.fromJson(Map<String, dynamic> json) {
     return NewsCard(
       title: json['title'],
       subtitle: json['subtitle'],
-      imageUrl: json['imageUrl'],
-      decription: json['decription'],
+      imageUrl: json['image_Url'],
+      description: json['description'],
     );
   }
 }
