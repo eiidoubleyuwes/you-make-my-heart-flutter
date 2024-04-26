@@ -22,14 +22,14 @@ class _RumorsPageState extends State<RumorsPage> {
       });
     } else {
       // Handle error
-      print('Failed to fetch predictions');
+      Get.snackbar('Error', 'Failed to load predictions');
     }
   }
 
   Future<void> addPrediction(String prediction) async {
     // Make an API call to add the prediction to the remote database
     final response = await http.post(
-      Uri.parse('https://api.example.com/predictions'),
+      Uri.parse('http://barakambuguaon.top/news/predictions.php'),
       body: jsonEncode({'prediction': prediction}),
       headers: {'Content-Type': 'application/json'},
     );
@@ -46,7 +46,7 @@ class _RumorsPageState extends State<RumorsPage> {
   Future<void> deletePrediction(String prediction) async {
     // Make an API call to delete the prediction from the remote database
     final response = await http.delete(
-      Uri.parse('https://api.example.com/predictions/$prediction'),
+      Uri.parse('http://barakambuguaon.top/news/predictions.php/$prediction'),
     );
     if (response.statusCode == 200) {
       setState(() {
