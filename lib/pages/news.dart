@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:myapp_flutter/configs/constants.dart';
 import 'package:myapp_flutter/views/newscards.dart';
 import 'package:http/http.dart' as http;
 
@@ -18,17 +19,20 @@ class _newsPageState extends State<newsPage> {
     super.initState();
     futureNewsCards = fetchNewsCards();
   }
-static Future<List<NewsCard>> fetchNewsCards() async {
-    final response =
-        await http.get(Uri.parse('http://barakambuguaon.top/news/racedetails.php'));
+
+  static Future<List<NewsCard>> fetchNewsCards() async {
+    final response = await http
+        .get(Uri.parse('http://barakambuguaon.top/news/racedetails.php'));
     if (response.statusCode == 200) {
-      final data = jsonDecode(response.body) as List;
-      return data.map((item) => NewsCard.fromJson(item)).toList();
+      final data = jsonDecode(response.body) as Map<String, dynamic>;
+      final List<dynamic> newsData = data['news'] ?? [];
+      return newsData.map((item) => NewsCard.fromJson(item)).toList();
     } else {
       throw Exception(
           'Failed to load news cards: Status code ${response.statusCode}');
     }
   }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -39,7 +43,7 @@ static Future<List<NewsCard>> fetchNewsCards() async {
           child: FutureBuilder<List<NewsCard>>(
             future: futureNewsCards,
             builder: (context, snapshot) {
-              if (snapshot.hasData) {
+              if (snapshot.hasData && snapshot.data!.isNotEmpty) {
                 final newsCards = snapshot.data!;
                 return ListView.builder(
                   scrollDirection: Axis.vertical,
@@ -52,7 +56,7 @@ static Future<List<NewsCard>> fetchNewsCards() async {
                 return Center(child: Text('Error: ${snapshot.error}'));
               }
               // Display a loading indicator while waiting for data
-              return const Center(child: CircularProgressIndicator());
+              return const Center(child: CircularProgressIndicator(color: ferrariyellow,));
             },
           ),
         ),
