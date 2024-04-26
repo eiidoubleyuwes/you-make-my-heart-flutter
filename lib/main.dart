@@ -4,7 +4,7 @@ import 'package:myapp_flutter/utils/routes.dart';
 
 void main() {
   runApp(GetMaterialApp(
-    initialRoute: "/home", // Change the initial route to /home since account creation is not necessary
+    initialRoute: "/login", // Change the initial route to /home since account creation is not necessary
     debugShowCheckedModeBanner: false,
     getPages: Routes.routes,  // Add the routes
   ));
