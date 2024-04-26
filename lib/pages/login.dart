@@ -90,7 +90,7 @@ class Login extends StatelessWidget {
                     }),
 
                 const SizedBox(
-                  height: 10.0,
+                  height: 20.0,
                 ),
 
                 //Button to navigate to the registration page
